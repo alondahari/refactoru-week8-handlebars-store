@@ -10,7 +10,8 @@
 
     <div id="product-container"></div>
     <ul id="wishlist"></ul>
-    <button>Add item to wishlist</button>
+    <input type="text" id="wishlist-input">
+    <button id="wishlist-add">Add item to wishlist</button>
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
@@ -18,12 +19,17 @@
     <script src="products-data.js"></script>
     <script src="main.js"></script>
 
-    <script id="product-template" type="text/x-handlebars-template>
+    <script id="product-template" type="text/x-handlebars-template">
       <div class="product-template">
         <h1>{{title}}</h1>
         <p class='product-cost'>${{cost}}</p>
         <img src="{{image}}" alt="{{title}} image">
       </div>
+    </script>
+
+    <script id="wishlist-template" type="text/x-handlebars-template">
+      <li class="wishlist-item">{{title}}</li>
+      <button class="wishlist-remove">Remove</button>
     </script>
 
   </body>
