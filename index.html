@@ -22,7 +22,13 @@
     <script id="product-template" type="text/x-handlebars-template">
       <div class="product-template">
         <h1>{{title}}</h1>
-        <p class='product-cost'>${{cost}}</p>
+        <p class='product-cost'>
+        {{#if sale}}
+          <span class="strike-through">${{cost}}</span> On Sale! ${{sale}}
+        {{else}}
+          ${{cost}}
+        {{/if}}
+        </p>
         <img src="{{image}}" alt="{{title}} image">
       </div>
     </script>
