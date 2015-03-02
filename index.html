@@ -20,17 +20,19 @@
     <script src="main.js"></script>
 
     <script id="product-template" type="text/x-handlebars-template">
-      <div class="product-template">
-        <h1>{{title}}</h1>
-        <p class='product-cost'>
-        {{#if sale}}
-          <span class="strike-through">${{cost}}</span> On Sale! ${{sale}}
-        {{else}}
-          ${{cost}}
-        {{/if}}
-        </p>
-        <img src="{{image}}" alt="{{title}} image">
-      </div>
+      {{#each productsList}}
+        <div class="product-template">
+          <h1>{{title}}</h1>
+          <p class='product-cost'>
+          {{#if sale}}
+            <span class="strike-through">${{cost}}</span> On Sale! ${{sale}}
+          {{else}}
+            ${{cost}}
+          {{/if}}
+          </p>
+          <img src="{{image}}" alt="{{title}} image">
+        </div>
+      {{/each}}
     </script>
 
     <script id="wishlist-template" type="text/x-handlebars-template">
